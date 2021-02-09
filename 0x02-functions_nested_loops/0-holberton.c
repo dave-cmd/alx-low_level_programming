@@ -1,23 +1,22 @@
-
-
-
-#include <stdio.h>
-#include <holberton.h>
-#inlcude "_putchar.c" 
+#include "holberton.h"
 /**
- * main - print Holberton without printf.
+ * main - Puts out 'Holberton' followed by a newline
+ * Uses the _putchar function
  *
- * Return: Always 0.
+ * Return: zero
  */
 int main(void)
 {
-char c[] = "Holberton";
-int size = sizeof(c) / sizeof(c[0]);
-int i;
-for (i = 0; i < size; i++)
-{
-_putchar(c[i]);
-}
-_putchar("\n");
-return (0);
+  _putchar('H');
+  _putchar('o');
+  _putchar('l');
+  _putchar('b');
+  _putchar('e');
+  _putchar('r');
+  _putchar('t');
+  _putchar('o');
+  _putchar('n');
+  _putchar('\n');
+
+  return (0);
 }
