@@ -8,11 +8,11 @@
 int main(void)
 {
 char c[] = "Holberton";
-int size = sizeof c / sizeof c[0];
+int size = sizeof(c) / sizeof(c[0]);
 int i;
- for (i = 0; i < size; i++)
+for (i = 0; i < size; i++)
 {
- _putchar(c[i]);
+_putchar(c[i]);
 }
 _putchar("\n");
 return (0);
