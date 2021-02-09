@@ -1,22 +1,21 @@
-#include <stdio.h>
 #include "holberton.h"
+
 /**
- * main - check the code for Holberton School students.
+ * print_alphabet - prints the alphabet, from a - z, followed by a newline
  *
- * Return: Always 0.
+ * Return: void
  */
 void print_alphabet(void)
 {
-char first = 'a';
-while (first <= 'z')
-{
-_putchar(first);
-first = first + 1;
-}
-}
-int main(void)
-{
-print_alphabet();
-_putchar('\n');
-return (0);
+  int a;
+
+  a = 'a';
+  while (a <= 'z')
+    {
+      _putchar(a++);
+    }
+  _putchar(10);
+
+  return;
+
 }
