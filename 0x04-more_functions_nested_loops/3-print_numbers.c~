@@ -1,0 +1,8 @@
+#include "holberton.h"
+/**
+ * print_numbers - Prints 0-9 using _putchar function
+ *
+ *
+ * Return: void
+ */
+void print_numbers(void)
