@@ -8,7 +8,8 @@
  */
 void print_most_numbers(void)
 {
-  int number = 0;
+  int number;
+  number = 0;
   while (number < 10)
 {
   if (number != 2 && nuber != 4)
