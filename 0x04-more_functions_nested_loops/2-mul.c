@@ -1,9 +1,10 @@
 #include "holberton.h"
 /**
- * mul Checks to see if parameter is an uppercase letter or not.
+ * mul - multiplies two integers
  *
- * @c: int to check
- * Return: returns 1 if uppercase letter, returns 0 if not.
+ * @a: int one
+ * @b: int two
+ * Return: returns a * b
  */
 int mul(int a, int b)
 {
