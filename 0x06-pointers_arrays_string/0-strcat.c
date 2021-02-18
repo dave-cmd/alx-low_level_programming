@@ -1,25 +1,21 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * main - check the code for Holberton School students.
+ * _strcat - concat strings, src appended to dest
  *
- * Return: Always 0.
+ * @dest: destination string
+ * @src: source string
+ * Return: returns finished string
  */
 char *_strcat(char *dest, char *src)
 {
-int i, j, len;
-i = 0;
-while (*(dest + i))
-{
+int i, j;
+
+i = j = 0;
+while (dest[i] != '\0')
 i++;
-}
-len = i;
-j = 0;
-while (*(src + j))
-{
-*(dest + len + j) = *(src + j);
-j++;
-}
+while (src[j] != '\0')
+dest[i++] = src[j++];
+dest[i] = '\0';
 return (dest);
 }
