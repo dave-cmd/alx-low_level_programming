@@ -24,9 +24,8 @@ if (grid[i] == NULL)
 {
 i--;
 while (i >= 0)
-{
-free(grid[i]);
-i--;
+	    
+free(grid[i]);i--;
 }
 free(grid);
 return (NULL);

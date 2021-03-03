@@ -1,25 +1,76 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "holberton.h"
 
 /**
- * _calloc - mallocs assigned memory and sets to zero
+ * _strlen - returns the length of a given string
  *
- * @nmemb: number of memory spaces
- * @size: size of nmemb
- * Return: returns pointer to allocated space, or NULL on failure
+ *
+ * @s: string to check the length of
+ * Return: returns the length of the string
  */
-
-void *_calloc(unsigned int nmemb, unsigned int size)
+int _strlen(char *s)
 {
-unsigned int i;
-char *space;
+int i;
 
-if (nmemb == 0 || size == 0)
+i = 0;
+while (s[i] != '\0')
+i++;
+return (i);
+}
+
+/**
+ * _strcpy - copies an entire string to a buffer
+ *
+ *
+ * @src: source string to copy
+ * @dest: buffer to copy string into
+ * Return: returns pointer to copied string
+ */
+char *_strcpy(char *dest, char *src)
+{
+int i;
+char *retval;
+
+i = 0;
+while (src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+dest[i] = src[i];
+
+retval = dest;
+
+return (retval);
+}
+
+/**
+ * str_concat - concatenates two strings to a new string
+ *
+ *
+ * @s1: first string
+ * @s2: second string
+ * Return: returns pointer to completed string
+ */
+char *str_concat(char *s1, char *s2)
+{
+char *new;
+int i, j, size;
+
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+size = (_strlen(s1) + _strlen(s2) + 1);
+new = malloc(size);
+if (new == NULL)
 return (NULL);
-space = malloc(nmemb * size);
-if (space == NULL)
-return (NULL);
-for (i = 0; i != size; i++)
-*(space + (size * i)) = 0;
-return (space);
+_strcpy(new, s1);
+i = _strlen(s1);
+for (i = _strlen(s1), j = 0; i != size && s2[j] != '\0'; i++, j++)
+new[i] = s2[j];
+new[i] = '\0'; 
+return (new);
 }

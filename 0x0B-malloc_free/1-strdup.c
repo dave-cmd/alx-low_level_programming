@@ -1,5 +1,7 @@
-#include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "holberton.h"
 
 /**
  * _strlen - returns the length of a given string
@@ -19,32 +21,48 @@ return (i);
 }
 
 /**
- * string_nconcat - concats two strings, using n chars from s2,
- * or all if n is over s2
+ * _strcpy - copies an entire string to a buffer
  *
- * @s1: string one
- * @s2: string two
- * @n: bytes of s2 to use
- * Return: returns pointer to string, or NULL if s1/s2 empty or malloc fails
+ *
+ * @src: source string to copy
+ * @dest: buffer to copy string into
+ * Return: returns pointer to copied string
  */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+char *_strcpy(char *dest, char *src)
 {
-char *newstring;
-unsigned int i, j;
+int i;
+char *retval;
 
-if (s1 == NULL)
-s1 = "";
-if (s2 == NULL)
-s2 = "";
-if ((int) n > _strlen(s2))
-n = _strlen(s2);
-newstring = malloc(_strlen(s1) + n + 1);
-if (newstring == NULL)
+i = 0;
+while (src[i] != '\0')
+{
+dest[i] = src[i];
+i++;
+}
+dest[i] = src[i];
+
+retval = dest;
+
+return (retval);
+}
+
+/**
+ * _strdup - duplicates a string to a newly allocated space
+ *
+ *
+ *
+ * @str: string to duplicate
+ * Return: returns pointer to duplicated string
+ */
+char *_strdup(char *str)
+{
+char *dupe;
+
+if (str == NULL)
 return (NULL);
-for (i = 0, j = 0; s1[i] != '\0'; i++, j++)
-newstring[j] = s1[i];
-for (i = 0; i != n; i++, j++)
-newstring[j] = s2[i];
-newstring[j] = '\0';
-return (newstring);
+dupe = malloc(_strlen(str) + 1);
+if (dupe == NULL)
+return (NULL);
+_strcpy(dupe, str);
+return (dupe);
 }
