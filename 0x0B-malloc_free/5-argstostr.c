@@ -14,7 +14,6 @@
 int _strlen(char *s)
 {
 int i;
-
 i = 0;
 while (s[i] != '\0')
 i++;
@@ -67,7 +66,7 @@ string = malloc(len * sizeof(char));
 if (string == NULL)
 return (NULL);
 i = 0;
-while (i < ac
+while (i < ac)
 {
 _strcat(string, av[i++]);
 _strcat(string, "\n");
