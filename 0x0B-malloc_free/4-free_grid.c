@@ -1,42 +1,18 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
 
 /**
- * alloc_grid - allocate a 2d integer grid
+ * free_grid - frees a created 2d grid
  *
- * @width: width of grid
+ * @grid: grid to free
  * @height: height of grid
- * Return: returns pointer to grid created
+ * return: void
  */
-int **alloc_grid(int width, int height)
+void free_grid(int **grid, int height)
 {
-int **grid, i, j, k;
-
-if (width <= 0 || height <= 0)
-return (NULL);
-grid = malloc(height * sizeof(int *));
-if (grid == NULL)
-return (NULL);
+int i;
 for (i = 0; i < height; i++)
-{
-grid[i] = malloc(width * sizeof(int));
-if (grid[i] == NULL)
-{
-i--;
-while (i >= 0)
-	    
-free(grid[i]);i--;
-}
+free(grid[i]);
 free(grid);
-return (NULL);
-}
-}
-for (j = 0; j < height; j++)
-{
-for (k = 0; k < width; k++)
-{
-grid[j][k] = 0;
-}
-}
-return (grid);
 }
